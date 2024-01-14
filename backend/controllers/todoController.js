@@ -29,11 +29,11 @@ const getTask = async (req, res) => {
 
 //create a new task
 const createTask = async(req, res) => {
-      const { title, task } = req.body
+      const { title, task, date } = req.body
       
       //add doc to db
       try {
-            const todo = await Todo.create({ title, task })
+            const todo = await Todo.create({ title, task, date })
             res.status(200).json(todo)
       } catch (error) { 
             res.status(400).json({ error: error.message })

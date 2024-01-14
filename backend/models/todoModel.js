@@ -10,7 +10,11 @@ const todoSchema = new Schema({
       task: {
             type: String,
             required: true,
+      },
+      date: {
+            type: Date,
+            required: true,
       }
-}, { timestamps: true })
+})
 
 module.exports = mongoose.model('Todo', todoSchema)
