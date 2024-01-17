@@ -30,6 +30,21 @@ const getTask = async (req, res) => {
 //create a new task
 const createTask = async(req, res) => {
       const { title, task, date } = req.body
+
+      let emptyFields = []
+
+      if (!title) {
+            emptyFields.push('title')
+      }
+      if (!task) { 
+            emptyFields.push('task')
+      }
+      if (!date) { 
+            emptyFields.push('date')
+      }
+      if(emptyFields.length > 0) {
+            return res.status(400).json({ error: 'Please fill in all fields', emptyFields })
+      }
       
       //add doc to db
       try {
