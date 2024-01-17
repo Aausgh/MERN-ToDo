@@ -5,7 +5,7 @@ import Header from './components/Header'
 function App() {
 
   return (
-    <main className='bg-gradient-to-t from-gray-700 via-gray-900 to-black'>
+    <main className=' bg-gray-900'>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
